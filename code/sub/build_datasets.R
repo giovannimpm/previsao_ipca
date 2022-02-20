@@ -28,15 +28,21 @@ colnames(covariadas_defasadas) = names
 covariadas_defasadas =
   covariadas_defasadas %>% select(-`data(-2)`)
 
+covariadas_defasadas = covariadas_defasadas[-1,]
+
 # Desagregacoes 
 # adicionando defasagens
 names = names(desagrega)
 names = paste0(names,"(-",rep(1:2, each = ncol(desagrega)),")")
-desagrega_defasadas = as.data.frame(embed(as.matrix(desagrega),2))
+desagrega_defasadas = as.data.frame(embed(as.matrix(desagrega),3))
+desagrega_defasadas = desagrega_defasadas[,-c(1:11)]
+
 colnames(desagrega_defasadas) = names
 
 desagrega_defasadas =
-  desagrega_defasadas %>% select(-`data(-2)`)
+  desagrega_defasadas %>% select(-c(`data(-2)`))
+
+# tirando a primeira dimensao
 
 # datasets por desagregacao
 desagregacoes_nomes = names(desagrega)
