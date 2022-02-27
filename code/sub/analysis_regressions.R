@@ -117,6 +117,10 @@ realizado = y[96:119]
 alimentacao_prev = data.frame(realizado, previsao_ar2, previsao_lasso,
                   previsao_media_historica, previsao_rf)
 
+alimentacao_erro = data.frame(erro_ar2,erro_lasso,
+                              erro_media_historica,
+                              erro_rf)
+
 
 ############ Comunicacao ###############
 colnames(comunicacao)[3] = "data"
@@ -203,6 +207,10 @@ realizado = y[96:119]
 
 comunicacao_prev = data.frame(realizado, previsao_ar2, previsao_lasso,
                               previsao_media_historica, previsao_rf)
+
+comunicacao_erro = data.frame(erro_ar2,erro_lasso,
+                              erro_media_historica,
+                              erro_rf)
 
 
 ############ Despesas Pessoais ###############
@@ -291,6 +299,10 @@ realizado = y[96:119]
 despesas_pessoais_prev = data.frame(realizado, previsao_ar2, previsao_lasso,
                               previsao_media_historica, previsao_rf)
 
+despesas_erro = data.frame(erro_ar2,erro_lasso,
+                              erro_media_historica,
+                              erro_rf)
+
 
 ############ Educacao ###############
 colnames(educacao)[3] = "data"
@@ -378,6 +390,10 @@ realizado = y[96:119]
 educacao_prev = data.frame(realizado, previsao_ar2, previsao_lasso,
                                     previsao_media_historica, previsao_rf)
 
+educacao_erro = data.frame(erro_ar2,erro_lasso,
+                              erro_media_historica,
+                              erro_rf)
+
 
 ############ Habitacao ###############
 colnames(habitacao)[3] = "data"
@@ -463,7 +479,11 @@ for (i in 1:24){
 realizado = y[96:119]
 
 habitacao_prev = data.frame(realizado, previsao_ar2, previsao_lasso,
+                            
                            previsao_media_historica, previsao_rf)
+habitacao_erro = data.frame(erro_ar2,erro_lasso,
+                              erro_media_historica,
+                              erro_rf)
 
 
 ############ ipca ###############
@@ -552,6 +572,10 @@ realizado = y[96:119]
 ipca_prev = data.frame(realizado, previsao_ar2, previsao_lasso,
                             previsao_media_historica, previsao_rf)
 
+ipca_erro = data.frame(erro_ar2,erro_lasso,
+                              erro_media_historica,
+                              erro_rf)
+
 
 ############ residencia ###############
 colnames(residencia)[3] = "data"
@@ -639,6 +663,9 @@ realizado = y[96:119]
 residencia_prev = data.frame(realizado, previsao_ar2, previsao_lasso,
                        previsao_media_historica, previsao_rf)
 
+residencia_erro = data.frame(erro_ar2,erro_lasso,
+                              erro_media_historica,
+                              erro_rf)
 
 
 ############ transporte ###############
@@ -727,6 +754,10 @@ realizado = y[96:119]
 transporte_prev = data.frame(realizado, previsao_ar2, previsao_lasso,
                              previsao_media_historica, previsao_rf)
 
+transporte_erro = data.frame(erro_ar2,erro_lasso,
+                              erro_media_historica,
+                              erro_rf)
+
 
 ############ vestuario ###############
 colnames(vestuario)[3] = "data"
@@ -813,6 +844,10 @@ realizado = y[96:119]
 
 vestuario_prev = data.frame(realizado, previsao_ar2, previsao_lasso,
                              previsao_media_historica, previsao_rf)
+
+vestuario_erro = data.frame(erro_ar2,erro_lasso,
+                              erro_media_historica,
+                              erro_rf)
 
 
 ############ saude ###############
@@ -901,7 +936,12 @@ realizado = y[96:119]
 saude_prev = data.frame(realizado, previsao_ar2, previsao_lasso,
                             previsao_media_historica, previsao_rf)
 
+saude_erro = data.frame(erro_ar2,erro_lasso,
+                              erro_media_historica,
+                              erro_rf)
+
 # escrevendo csv
+# previsao
 write.csv(alimentacao_prev, file.path(tab,"alimentacao_prev.csv"), row.names = F)
 write.csv(comunicacao_prev, file.path(tab,"comunicacao_prev.csv"), row.names = F)
 write.csv(despesas_pessoais_prev, file.path(tab,"despesas_pessoais_prev.csv"), row.names = F)
@@ -913,3 +953,14 @@ write.csv(saude_prev, file.path(tab,"saude_prev.csv"), row.names = F)
 write.csv(transporte_prev, file.path(tab,"transporte_prev.csv"), row.names = F)
 write.csv(vestuario_prev, file.path(tab,"vestuario_prev.csv"), row.names = F)
 
+#erros
+write.csv(alimentacao_erro, file.path(tab,"alimentacao_erro.csv"), row.names = F)
+write.csv(comunicacao_erro, file.path(tab,"comunicacao_erro.csv"), row.names = F)
+write.csv(despesas_erro, file.path(tab,"despesas_pessoais_erro.csv"), row.names = F)
+write.csv(educacao_erro, file.path(tab,"educacao_erro.csv"), row.names = F)
+write.csv(habitacao_erro, file.path(tab,"habitacao_erro.csv"), row.names = F)
+write.csv(ipca_erro, file.path(tab,"ipca_erro.csv"), row.names = F)
+write.csv(residencia_erro, file.path(tab,"residencia_erro.csv"), row.names = F)
+write.csv(saude_erro, file.path(tab,"saude_erro.csv"), row.names = F)
+write.csv(transporte_erro, file.path(tab,"transporte_erro.csv"), row.names = F)
+write.csv(vestuario_erro, file.path(tab,"vestuario_erro.csv"), row.names = F)
