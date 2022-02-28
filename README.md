@@ -1,3 +1,2 @@
-# Modelos de previsão para o IPCA
+[Projeto_Final___Ci_ncia_de_Dados (6).pdf](https://github.com/giovannimpm/previsao_ipca/files/8149889/Projeto_Final___Ci_ncia_de_Dados.6.pdf)
 
-O principal objetivo deste trabalho é construir e avaliar modelos de machine learning para previsão do IPCA.
